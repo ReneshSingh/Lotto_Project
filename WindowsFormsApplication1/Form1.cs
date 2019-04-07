@@ -24,10 +24,10 @@ namespace WindowsFormsApplication1
         {
             int[] balls = new int[num_balls];
             gen = new Lotto_machine();
-            OW = new OutPutWriter();
+            OW = OutPutWriter.getInstance();
             gen.Lotto_numbers(balls);
-            OW.ToFile(balls);
-            
+            OW.ArchiveResults(balls);
+
             label1.Text = "Your lotto numbers are:";
             label2.Text = balls.GetValue(0).ToString();
             label3.Text = balls.GetValue(1).ToString();
