@@ -15,66 +15,74 @@ namespace WindowsFormsApplication1
         private Lotto_machine gen;
         private OutPutWriter OW;
         private int num_balls = 6;
+        private List<Label> UILabels;
+        private void toUI(List<int> balls, string message)
+        {
+            UILabels[0].Text = message;
+            for (int i = 1; i < UILabels.Count(); i++)
+                UILabels[i].Text = balls[i-1].ToString();
+        }
         public Form1()
         {
             InitializeComponent();
+            gen = new Lotto_machine();
+            OW = OutPutWriter.getInstance();
+            UILabels = new List<Label>();
+            UILabels.Add(label1);
+            UILabels.Add(label2);
+            UILabels.Add(label3);
+            UILabels.Add(label4);
+            UILabels.Add(label5);
+            UILabels.Add(label6);
+            UILabels.Add(label7);
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             int[] balls = new int[num_balls];
-            gen = new Lotto_machine();
-            OW = OutPutWriter.getInstance();
             gen.Lotto_numbers(balls);
-            OW.ArchiveResults(balls);
-
-            label1.Text = "Your lotto numbers are:";
-            label2.Text = balls.GetValue(0).ToString();
-            label3.Text = balls.GetValue(1).ToString();
-            label4.Text = balls.GetValue(2).ToString();
-            label5.Text = balls.GetValue(3).ToString();
-            label6.Text = balls.GetValue(4).ToString();
-            label7.Text = balls.GetValue(5).ToString();
+            OW.ArchiveResults(balls.ToArray());
+            toUI(balls.ToList(), "Your Lotto numbers are:");
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
-
         private void label4_Click(object sender, EventArgs e)
         {
 
         }
-
         private void label6_Click(object sender, EventArgs e)
         {
 
         }
-
         private void label3_Click(object sender, EventArgs e)
         {
 
         }
-
         private void label7_Click(object sender, EventArgs e)
         {
 
         }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
-
         private void label5_Click(object sender, EventArgs e)
         {
 
         }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            List<int> balls = new List<int>();
+            gen.Lotto_numbers(balls, 5);
+            balls.Add(gen.newLottoNUmber(1,20));
+            OW.ArchiveResults(balls.ToArray());
+            toUI(balls, "Your Power Ball numbers are:");
+            label7.Text += "\nPower\nBall";
         }
     }
 }

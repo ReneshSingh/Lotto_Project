@@ -8,7 +8,13 @@ namespace WindowsFormsApplication1
 {
     class Lotto_machine
     {
-        static private int newLottoNUmber(int min = 1, int max = 50)
+        private OutPutWriter OW;
+        private int newBall = 0;
+        public Lotto_machine()
+        {
+            OW = OutPutWriter.getInstance();
+        }
+        public int newLottoNUmber(int min = 1, int max = 50)
         //Randomly selects a lotto ball in the provided range of min & max. 
         {
             int ball;
@@ -16,23 +22,31 @@ namespace WindowsFormsApplication1
             ball = r.Next(min, max);
             return ball;
         }
-
-        public void Lotto_numbers(int[] balls, int max = 50, int min = 1)
-            //Creates a list of lotto numbers
+        private void uniquenessCheck(List<int> balls, int min, int max)
         {
-            OutPutWriter OW = OutPutWriter.getInstance();
-            int newBall = 0;
+            do
+                newBall = newLottoNUmber(min, max);
+            while (balls.Contains(newBall));
+        }
+        //Populates newBall with a number not found in the list provided. 
+        public void Lotto_numbers(int[] balls, int min = 1, int max = 50)
+        //Creates a list of lotto numbers
+        {
             for (int i = 0; i < balls.Length; i++)
             {
-                newBall = newLottoNUmber(min, max);
-                for (int j = 0; j < i; j++)
-                    if (balls[i] == newBall)
-                    {
-                        newBall = newLottoNUmber(min, max);
-                        j = 0;
-                    }
+                uniquenessCheck(balls.ToList(), min, max);
                 OW.stats(newBall);
                 balls[i] = newBall;
+            }
+        }
+        public void Lotto_numbers(List<int> balls, int numBalls, int min = 1, int max = 50)
+        //Creates a list of lotto numbers
+        {
+            for (int i = 0; i < numBalls; i++)
+            {
+                uniquenessCheck(balls, min, max);
+                balls.Add(newBall);
+                OW.stats(newBall);
             }
         }
     }

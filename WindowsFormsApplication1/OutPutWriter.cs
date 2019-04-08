@@ -26,12 +26,12 @@ namespace WindowsFormsApplication1
                 temp = System.IO.File.ReadAllLines(@".../Lotto_Statistics.csv");
                 Statistics = temp.ToList();
             }
-            Statistics.Sort();
+            //Statistics.Sort();
         }
         //Cleans up and writes data to file. 
         ~OutPutWriter()
         {
-            Statistics.Sort();
+            //Statistics.Sort();
             System.IO.File.WriteAllLines(@".../Lotto_Statistics.csv", Statistics);
         }
         // Returns an instant of the OutPutWriter or creats it if it doesn’t exist. (part of the singleton patten).
@@ -54,17 +54,14 @@ namespace WindowsFormsApplication1
         //Updates the statistics based on the ball drawn. 
         public void stats(int ball)
         {
-            int n = 0;
             bool found = false;
-            System.IO.File.WriteAllLines("E:/Lotto_Project/WindowsFormsApplication1/WindowsFormsApplication1/LottoResults.txt", Statistics);
-            if (!Statistics.Any())
-                foreach (string i in Statistics)
+            if (Statistics.Any())
+                for (int n = 0; n < Statistics.Count(); n++)
                 {
-                    n++;
+                    temp = Statistics[n].Split(',');
                     if (temp[0] == ball.ToString())
                     {
-                        int Occurrences;
-                        Occurrences = Convert.ToInt32(temp[1]);
+                        int Occurrences = Convert.ToInt32(temp[1]);
                         Occurrences++;
                         temp[1] = Occurrences.ToString();
                         Statistics[n] = temp[0] + "," + temp[1];
