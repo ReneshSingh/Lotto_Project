@@ -39,15 +39,17 @@ namespace WindowsFormsApplication1
                 balls[i] = newBall;
             }
         }
-        public void Lotto_numbers(List<int> balls, int numBalls, int min = 1, int max = 50)
+        public List<int> Lotto_numbers(int numBalls, int min = 1, int max = 50)
         //Creates a list of lotto numbers
         {
+            List<int> balls = new List<int>();
             for (int i = 0; i < numBalls; i++)
             {
                 uniquenessCheck(balls, min, max);
                 balls.Add(newBall);
                 OW.stats(newBall);
             }
+            return balls;
         }
     }
 }

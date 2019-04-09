@@ -14,8 +14,8 @@ namespace WindowsFormsApplication1
     {
         private Lotto_machine gen;
         private OutPutWriter OW;
-        private int num_balls = 6;
         private List<Label> UILabels;
+        private List<int> balls; 
         private void toUI(List<int> balls, string message)
         {
             UILabels[0].Text = message;
@@ -38,10 +38,9 @@ namespace WindowsFormsApplication1
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            int[] balls = new int[num_balls];
-            gen.Lotto_numbers(balls);
+            balls = gen.Lotto_numbers(6);
             OW.ArchiveResults(balls.ToArray());
-            toUI(balls.ToList(), "Your Lotto numbers are:");
+            toUI(balls, "Your Lotto numbers are:");
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -77,8 +76,7 @@ namespace WindowsFormsApplication1
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            List<int> balls = new List<int>();
-            gen.Lotto_numbers(balls, 5);
+            balls = gen.Lotto_numbers(5);
             balls.Add(gen.newLottoNUmber(1,20));
             OW.ArchiveResults(balls.ToArray());
             toUI(balls, "Your Power Ball numbers are:");
