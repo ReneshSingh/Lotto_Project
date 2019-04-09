@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.28307.489
+VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lotto_Project", "WindowsFormsApplication1\Lotto_Project.csproj", "{07D0C2E3-6DDF-48D1-AB2F-C1466506DB7C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lotto_Project", "Lotto_Project\Lotto_Project.csproj", "{07D0C2E3-6DDF-48D1-AB2F-C1466506DB7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D5D37820-6B2F-452D-862E-5DFF042E22A9}
+		SolutionGuid = {450EE864-879C-4944-92DE-5C4FD52EBF77}
 	EndGlobalSection
 EndGlobal
