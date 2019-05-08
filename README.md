@@ -1,3 +1,5 @@
+# Lotto_Project
+
 What the application does
 
 This program generates lotto or power ball numbers, the draws are displayed on screen. In addition to this the results are saved to a file LottoResults.txt, and the statistics saved in Lotto_Statistics.csv. For every subsequent draw these files are updated with the results.
