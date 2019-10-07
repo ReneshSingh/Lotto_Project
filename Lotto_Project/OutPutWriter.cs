@@ -10,12 +10,13 @@ namespace WindowsFormsApplication1
     {
         static private OutPutWriter OPW;
         static private bool instance = false;
-        private List<String> Statistics;
+        private List<String> Statistics, Draws;
         private string[] temp = null;
         //Constructor for singleton pattern, also reads statistics file into memory.
         private OutPutWriter()
         {
             instance = true;
+            Draws = new List<String>();
             if (!System.IO.File.Exists(@".../Lotto_Statistics.csv"))
             {
                 System.IO.File.Create(@".../Lotto_Statistics.csv");
@@ -42,14 +43,13 @@ namespace WindowsFormsApplication1
             return OPW;
         }
         //Archives the results of a lotto draw. 
-        //In the process of refactoring, such that it rights to a DB. 
         public void ArchiveResults(int[] balls)
         {
             int num_balls = balls.GetLength(0);
-            string[] a = new string[num_balls];
+            string b = null;
             for (int i = 0; i < num_balls; i++)
-                a.SetValue(balls.GetValue(i).ToString(), i);
-            System.IO.File.AppendAllLines(@".../LottoResults.txt", a);
+                b += balls.GetValue(i).ToString() + ",";
+            Draws.Add(b);
         }
         //Updates the statistics based on the ball drawn. 
         public void stats(int ball)
