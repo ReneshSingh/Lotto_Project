@@ -34,6 +34,7 @@ namespace WindowsFormsApplication1
         {
             //Statistics.Sort();
             System.IO.File.WriteAllLines(@".../Lotto_Statistics.csv", Statistics);
+            System.IO.File.AppendAllLines(@".../Lotto_Results.csv", Draws);
         }
         // Returns an instant of the OutPutWriter or creats it if it doesn’t exist. (part of the singleton patten).
         static public OutPutWriter getInstance()
