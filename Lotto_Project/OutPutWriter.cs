@@ -12,7 +12,7 @@ namespace WindowsFormsApplication1
         static private bool instance = false;
         private List<String> Statistics, Draws;
         private string[] temp = null;
-        //Constructor for singleton pattern, also reads statistics file into memory.
+        //! \brief Constructor for singleton pattern, also reads statistics file into memory.
         private OutPutWriter()
         {
             instance = true;
@@ -29,21 +29,21 @@ namespace WindowsFormsApplication1
             }
             //Statistics.Sort();
         }
-        //Cleans up and writes data to file. 
+        //! \brief Cleans up and writes data to file. 
         ~OutPutWriter()
         {
             //Statistics.Sort();
             System.IO.File.WriteAllLines(@".../Lotto_Statistics.csv", Statistics);
             System.IO.File.AppendAllLines(@".../Lotto_Results.csv", Draws);
         }
-        // Returns an instant of the OutPutWriter or creats it if it doesn’t exist. (part of the singleton patten).
+        //! \brief Returns an instant of the OutPutWriter or creats it if it doesn’t exist. (part of the singleton patten).
         static public OutPutWriter getInstance()
         {
             if (!instance)
                 OPW = new OutPutWriter();
             return OPW;
         }
-        //Archives the results of a lotto draw. 
+        //! \brief Archives the results of a lotto draw. 
         public void ArchiveResults(int[] balls)
         {
             int num_balls = balls.GetLength(0);
@@ -52,7 +52,7 @@ namespace WindowsFormsApplication1
                 b += balls.GetValue(i).ToString() + ",";
             Draws.Add(b);
         }
-        //Updates the statistics based on the ball drawn. 
+        //! \brief Updates the statistics based on the ball drawn. 
         public void stats(int ball)
         {
             bool found = false;
