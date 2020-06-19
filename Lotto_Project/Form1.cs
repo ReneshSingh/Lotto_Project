@@ -16,7 +16,7 @@ namespace WindowsFormsApplication1
         //private OutPutWriter OW;
         private List<Label> UILabels;
         private List<int> balls; 
-        private Lotto_Statistics;
+        private Lotto_Statistics LottoRecords;
         private void toUI(List<int> balls, string message)
         {
             UILabels[0].Text = message;
@@ -27,7 +27,7 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
             gen = new Lotto_machine();
-            records = Lotto_Statistics
+            LottoRecords = Lotto_Statistics.getInstance();
             //OW = OutPutWriter.getInstance();
             UILabels = new List<Label>();
             UILabels.Add(label1);
@@ -41,7 +41,8 @@ namespace WindowsFormsApplication1
         private void button1_Click(object sender, EventArgs e)
         {
             balls = gen.Lotto_numbers(6);
-            //OW.ArchiveResults(balls.ToArray());
+            LottoRecords.AddLotteryDraw(balls);
+            LottoRecords.LoteryStatistics(balls);
             toUI(balls, "Your Lotto numbers are:");
         }
         private void Form1_Load(object sender, EventArgs e)
@@ -80,7 +81,8 @@ namespace WindowsFormsApplication1
         {
             balls = gen.Lotto_numbers(5);
             balls.Add(gen.newLottoNUmber(1,20));
-            //OW.ArchiveResults(balls.ToArray());
+            LottoRecords.AddPowerBallDraw(balls);
+            LottoRecords.PowerBallStatistics(balls);
             toUI(balls, "Your Power Ball numbers are:");
             label7.Text += "\nPower\nBall";
         }

@@ -8,14 +8,12 @@ namespace WindowsFormsApplication1
 {
     class OutPutWriter
     {
-        static private OutPutWriter OPW;
-        static private bool instance = false;
+        static private OutPutWriter OPW = null;
         private List<String> Statistics, Draws;
         private string[] temp = null;
         //! \brief Constructor for singleton pattern, also reads statistics file into memory.
         private OutPutWriter()
         {
-            instance = true;
             Draws = new List<String>();
             if (!System.IO.File.Exists(@".../Lotto_Statistics.csv"))
             {
@@ -39,7 +37,7 @@ namespace WindowsFormsApplication1
         //! \brief Returns an instant of the OutPutWriter or creats it if it doesn’t exist. (part of the singleton patten).
         static public OutPutWriter getInstance()
         {
-            if (!instance)
+            if (OPW ==null)
                 OPW = new OutPutWriter();
             return OPW;
         }

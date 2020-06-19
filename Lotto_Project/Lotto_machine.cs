@@ -16,22 +16,22 @@ namespace WindowsFormsApplication1
      */
     class Lotto_machine
     {
-        //private OutPutWriter OW;
         private int newBall = 0;
+        //! \brief Constructor 
         public Lotto_machine()
         {
-            //OW = OutPutWriter.getInstance();
+            
         }
+        //! \brief Randomly selects a lotto ball in the provided range of min & max. 
         public int newLottoNUmber(int min = 1, int max = 50)
-        //!< \brief Randomly selects a lotto ball in the provided range of min & max. 
         {
             int ball;
             Random r = new Random();
             ball = r.Next(min, max);
             return ball;
         }
+        //! \brief Determines weather all values in the lotto draw is unique. 
         private void uniquenessCheck(List<int> balls, int min, int max)
-         //! \brief Determines weather all values in the lotto draw is unique. 
         {
             do
                 newBall = newLottoNUmber(min, max);
@@ -50,7 +50,6 @@ namespace WindowsFormsApplication1
             {
                 uniquenessCheck(balls, min, max);
                 balls.Add(newBall);
-                //OW.stats(newBall);
             }
             return balls;
         }
@@ -65,8 +64,8 @@ namespace WindowsFormsApplication1
         protected List<List<int>> Lottery; //!< \brief Collection of draws
         private Dictionary<int, int> PowerBallCollection; //!< \brief Records the number of occurrences of the ball
         private Dictionary<int, int> LotteryCollection; //!< \brief Records the number of occurrences of the ball
-        private Lotto_Statistics instance;
-        public Lotto_Statistics getInstance() //!< \brief Implementation of the singleton pattern.
+        static private Lotto_Statistics instance = null;
+        static public Lotto_Statistics getInstance() //!< \brief Implementation of the singleton pattern.
         {
             if (instance == null)
                 instance = new Lotto_Statistics();
@@ -74,10 +73,10 @@ namespace WindowsFormsApplication1
         }
         private Lotto_Statistics()
         {
-            PowerBall = new List<List<int>>;
-            Lottery = new List<List<int>>;
-            PowerBallCollection = new Dictionary<int, int>;
-            LotteryCollection = new Dictionary<int, int>;
+            PowerBall = new List<List<int>>();
+            Lottery = new List<List<int>>();
+            PowerBallCollection = new Dictionary<int, int>();
+            LotteryCollection = new Dictionary<int, int>();
         }
         public void AddPowerBallDraw(List<int> Draw) //!< \brief Adds the draw to the record of draws.
         {
@@ -102,6 +101,17 @@ namespace WindowsFormsApplication1
             else
                 PowerBallCollection.Add(Ball, value);
         }
+        /*! \brief Updates the PowerBall record.
+         * 
+         * Updates the record with the ball drawn, if the ball has been drawn before it updates the record accordingly. 
+         */
+        public void PowerBallStatistics(List<int> Draw)
+        {
+            foreach(int item in Draw)
+            {
+                PowerBallStatistics(item);
+            }
+        }
         /*! \brief Updates the Lotery record.
          * 
          * Updates the record with the ball drawn, if the ball has been drawn before it updates the record accordingly. 
@@ -117,6 +127,16 @@ namespace WindowsFormsApplication1
             else
                 LotteryCollection.Add(Ball, value);
         }
-        
+        /*! \brief Updates the Lotery record.
+         * 
+         * Updates the record with the ball drawn, if the ball has been drawn before it updates the record accordingly. 
+         */
+        public void LoteryStatistics(List<int> Draw)
+        {
+            foreach (int item in Draw)
+            {
+                LoteryStatistics(item);
+            }
+        }
     }
 }
