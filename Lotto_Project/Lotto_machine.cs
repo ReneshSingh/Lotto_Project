@@ -96,6 +96,7 @@ namespace WindowsFormsApplication1
             if (PowerBallCollection.ContainsKey(Ball))
             {
                 PowerBallCollection.TryGetValue(Ball, out value);
+                value++;
                 PowerBallCollection.Add(Ball, value);
             }
             else
@@ -122,6 +123,7 @@ namespace WindowsFormsApplication1
             if (LotteryCollection.ContainsKey(Ball))
             {
                 LotteryCollection.TryGetValue(Ball, out value);
+                value++;
                 LotteryCollection.Add(Ball, value);
             }
             else

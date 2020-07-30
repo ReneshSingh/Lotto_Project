@@ -68,7 +68,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Lotto_machine.cs" />
-    <Compile Include="OutPutWriter.cs" />
+    <Compile Include="IOModule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

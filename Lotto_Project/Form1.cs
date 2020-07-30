@@ -13,7 +13,6 @@ namespace WindowsFormsApplication1
     public partial class Form1 : Form
     {
         private Lotto_machine gen;
-        //private OutPutWriter OW;
         private List<Label> UILabels;
         private List<int> balls; 
         private Lotto_Statistics LottoRecords;
@@ -28,7 +27,6 @@ namespace WindowsFormsApplication1
             InitializeComponent();
             gen = new Lotto_machine();
             LottoRecords = Lotto_Statistics.getInstance();
-            //OW = OutPutWriter.getInstance();
             UILabels = new List<Label>();
             UILabels.Add(label1);
             UILabels.Add(label2);
