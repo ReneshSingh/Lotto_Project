@@ -44,13 +44,12 @@ namespace IOModule
             return fileName;
         }
         //! \brief writes formated text to file.
-        public void TextBoxToFile(string text, string fileName = null)
+        public void TextToFile(string text, string fileName = null)
         {
-            while (fileName == null)
-            {
+            if (fileName == null)
                 fileName = getFileName("Text file (*txt) | *.txt | All files (*.*) | *.* | Word (*.doc) | *.doc");
-            }
-            System.IO.File.WriteAllText(fileName, text);
+            if (fileName != null)
+                System.IO.File.WriteAllText(fileName, text);
         }
         //! \brief Writes dat in a CSV format to a user selected file.
         public void ToCSVfile(Dictionary<int, int> data)
@@ -58,7 +57,7 @@ namespace IOModule
             string text = null;
             foreach (KeyValuePair<int, int> pair in data)
                 text += pair.Key + "," + pair.Value + "\n";
-            TextBoxToFile(text, getFileName("CSV (*.csv) | *.csv"));
+            TextToFile(text, getFileName("CSV (*.csv) | *.csv"));
         }
         //! \brief Writes dat in a CSV format to a user selected file.
         public void ToCSV(List<List<int>> data)
@@ -70,7 +69,7 @@ namespace IOModule
                     text += item.ToString() + ",";
                 text += "\n";
             }
-            TextBoxToFile(text, getFileName("CSV (*.csv) | *.csv"));
+            TextToFile(text, getFileName("CSV (*.csv) | *.csv"));
         }
         //! \brief Writes dat to a TSV format to a user selected file.
         public void ToTSV(Dictionary<int, int> data)
@@ -78,7 +77,7 @@ namespace IOModule
             string text = null;
             foreach (KeyValuePair<int, int> pair in data)
                 text += pair.Key + "\t" + pair.Value + "\n";
-            TextBoxToFile(text, getFileName("CSV (*.csv) | *.csv"));
+            TextToFile(text, getFileName("CSV (*.csv) | *.csv"));
         }
         //! \brief Writes dat to a TSV format to a user selected file.
         public void ToTSV(List<List<int>> data)
@@ -90,7 +89,7 @@ namespace IOModule
                     text += item.ToString() + "\t";
                 text += "\n";
             }
-            TextBoxToFile(text, getFileName("CSV (*.csv) | *.csv"));
+            TextToFile(text, getFileName("CSV (*.csv) | *.csv"));
         }
 
     }

@@ -97,10 +97,9 @@ namespace WindowsFormsApplication1
             {
                 PowerBallCollection.TryGetValue(Ball, out value);
                 value++;
-                PowerBallCollection.Add(Ball, value);
+                PowerBallCollection.Remove(Ball);
             }
-            else
-                PowerBallCollection.Add(Ball, value);
+            PowerBallCollection.Add(Ball, value);
         }
         /*! \brief Updates the PowerBall record.
          * 
@@ -124,10 +123,9 @@ namespace WindowsFormsApplication1
             {
                 LotteryCollection.TryGetValue(Ball, out value);
                 value++;
-                LotteryCollection.Add(Ball, value);
+                LotteryCollection.Remove(Ball);
             }
-            else
-                LotteryCollection.Add(Ball, value);
+            LotteryCollection.Add(Ball, value);
         }
         /*! \brief Updates the Lotery record.
          * 
