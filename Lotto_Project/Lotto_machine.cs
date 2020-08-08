@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 /*! \namespace 
  * \brief Provides classes to perform a lottery.
  */
-namespace WindowsFormsApplication1
+namespace LotteryTools
 {
     /*! \class Lotto_machine
      * \brief Provides classes to perform a lottery 

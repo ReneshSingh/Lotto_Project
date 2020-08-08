@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LotteryTools;
 
 namespace WindowsFormsApplication1
 {
@@ -14,7 +15,7 @@ namespace WindowsFormsApplication1
     {
         private Lotto_machine gen;
         private List<Label> UILabels;
-        private List<int> balls; 
+        private List<int> balls = null;
         private Lotto_Statistics LottoRecords;
         private void toUI(List<int> balls, string message)
         {
@@ -28,7 +29,7 @@ namespace WindowsFormsApplication1
             gen = new Lotto_machine();
             LottoRecords = Lotto_Statistics.getInstance();
             UILabels = new List<Label>();
-            UILabels.Add(label1);
+            UILabels.Add(displayMSG);
             UILabels.Add(label2);
             UILabels.Add(label3);
             UILabels.Add(label4);
@@ -38,10 +39,18 @@ namespace WindowsFormsApplication1
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            balls = gen.Lotto_numbers(6);
-            LottoRecords.AddLotteryDraw(balls);
-            LottoRecords.LoteryStatistics(balls);
-            toUI(balls, "Your Lotto numbers are:");
+            if ((Convert.ToInt32(maxBalls.Value) - Convert.ToInt32(minBalls.Value) >= 5))
+            {
+                for (int i = 0; i < Convert.ToInt32(numDraws.Value); i++)
+                {
+                    balls = gen.Lotto_numbers(6, Convert.ToInt32(minBalls.Value), Convert.ToInt32(maxBalls.Value));
+                    LottoRecords.AddLotteryDraw(balls);
+                    LottoRecords.LoteryStatistics(balls);
+                }
+                toUI(balls, "Your Lotto numbers are:");
+            }
+            else
+                displayMSG.Text = "Not enough balls in range.";
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -77,12 +86,24 @@ namespace WindowsFormsApplication1
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            balls = gen.Lotto_numbers(5);
-            balls.Add(gen.newLottoNUmber(1,20));
-            LottoRecords.AddPowerBallDraw(balls);
-            LottoRecords.PowerBallStatistics(balls);
-            toUI(balls, "Your Power Ball numbers are:");
-            label7.Text += "\nPower\nBall";
+            if (Convert.ToInt32(maxBalls.Value) - Convert.ToInt32(minBalls.Value) >= 5)
+            {
+                for (int i = 0; i < Convert.ToInt32(numDraws.Value); i++)
+                {
+                    balls = gen.Lotto_numbers(5, Convert.ToInt32(minBalls.Value), Convert.ToInt32(maxBalls.Value));
+                    balls.Add(gen.newLottoNUmber(Convert.ToInt32(minPowerBall.Value), Convert.ToInt32(maxPowerBall.Value)));
+                    LottoRecords.AddPowerBallDraw(balls);
+                    LottoRecords.PowerBallStatistics(balls);
+                }
+                toUI(balls, "Your Power Ball numbers are:");
+                label7.Text += "\nPower\nBall";
+            }
+            else
+                displayMSG.Text = "Not enough balls in range.";
+        }
+        private void maxBalls_ValueChanged(object sender, EventArgs e)
+        {
+            maxBalls.Minimum = minBalls.Minimum + 6;
         }
     }
 }
