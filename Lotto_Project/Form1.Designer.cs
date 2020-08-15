@@ -48,12 +48,19 @@
             this.numDraws = new System.Windows.Forms.NumericUpDown();
             this.minPowerBall = new System.Windows.Forms.NumericUpDown();
             this.minBalls = new System.Windows.Forms.NumericUpDown();
+            this.ImportAndExportBox = new System.Windows.Forms.GroupBox();
+            this.PrintLottoDraws = new System.Windows.Forms.RadioButton();
+            this.PrintPowerBallDraws = new System.Windows.Forms.RadioButton();
+            this.PrintLotteryStats = new System.Windows.Forms.RadioButton();
+            this.PrintPowerBallStats = new System.Windows.Forms.RadioButton();
+            this.ExportData = new System.Windows.Forms.Button();
             this.L_PB_Settings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maxPowerBall)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maxBalls)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDraws)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minPowerBall)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minBalls)).BeginInit();
+            this.ImportAndExportBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -322,11 +329,80 @@
             0,
             0});
             // 
+            // ImportAndExportBox
+            // 
+            this.ImportAndExportBox.Controls.Add(this.ExportData);
+            this.ImportAndExportBox.Controls.Add(this.PrintPowerBallStats);
+            this.ImportAndExportBox.Controls.Add(this.PrintLotteryStats);
+            this.ImportAndExportBox.Controls.Add(this.PrintPowerBallDraws);
+            this.ImportAndExportBox.Controls.Add(this.PrintLottoDraws);
+            this.ImportAndExportBox.Location = new System.Drawing.Point(303, 140);
+            this.ImportAndExportBox.Name = "ImportAndExportBox";
+            this.ImportAndExportBox.Size = new System.Drawing.Size(225, 110);
+            this.ImportAndExportBox.TabIndex = 4;
+            this.ImportAndExportBox.TabStop = false;
+            this.ImportAndExportBox.Text = "Import and Export";
+            // 
+            // PrintLottoDraws
+            // 
+            this.PrintLottoDraws.AutoSize = true;
+            this.PrintLottoDraws.Location = new System.Drawing.Point(9, 27);
+            this.PrintLottoDraws.Name = "PrintLottoDraws";
+            this.PrintLottoDraws.Size = new System.Drawing.Size(82, 17);
+            this.PrintLottoDraws.TabIndex = 0;
+            this.PrintLottoDraws.TabStop = true;
+            this.PrintLottoDraws.Text = "Lotto Draws";
+            this.PrintLottoDraws.UseVisualStyleBackColor = true;
+            // 
+            // PrintPowerBallDraws
+            // 
+            this.PrintPowerBallDraws.AutoSize = true;
+            this.PrintPowerBallDraws.Location = new System.Drawing.Point(104, 27);
+            this.PrintPowerBallDraws.Name = "PrintPowerBallDraws";
+            this.PrintPowerBallDraws.Size = new System.Drawing.Size(105, 17);
+            this.PrintPowerBallDraws.TabIndex = 0;
+            this.PrintPowerBallDraws.TabStop = true;
+            this.PrintPowerBallDraws.Text = "PowerBall Draws";
+            this.PrintPowerBallDraws.UseVisualStyleBackColor = true;
+            // 
+            // PrintLotteryStats
+            // 
+            this.PrintLotteryStats.AutoSize = true;
+            this.PrintLotteryStats.Location = new System.Drawing.Point(9, 50);
+            this.PrintLotteryStats.Name = "PrintLotteryStats";
+            this.PrintLotteryStats.Size = new System.Drawing.Size(82, 17);
+            this.PrintLotteryStats.TabIndex = 0;
+            this.PrintLotteryStats.TabStop = true;
+            this.PrintLotteryStats.Text = "Lottery stats";
+            this.PrintLotteryStats.UseVisualStyleBackColor = true;
+            // 
+            // PrintPowerBallStats
+            // 
+            this.PrintPowerBallStats.AutoSize = true;
+            this.PrintPowerBallStats.Location = new System.Drawing.Point(104, 50);
+            this.PrintPowerBallStats.Name = "PrintPowerBallStats";
+            this.PrintPowerBallStats.Size = new System.Drawing.Size(97, 17);
+            this.PrintPowerBallStats.TabIndex = 0;
+            this.PrintPowerBallStats.TabStop = true;
+            this.PrintPowerBallStats.Text = "PowerBall stats";
+            this.PrintPowerBallStats.UseVisualStyleBackColor = true;
+            // 
+            // ExportData
+            // 
+            this.ExportData.Location = new System.Drawing.Point(68, 73);
+            this.ExportData.Name = "ExportData";
+            this.ExportData.Size = new System.Drawing.Size(75, 23);
+            this.ExportData.TabIndex = 1;
+            this.ExportData.Text = "&Export";
+            this.ExportData.UseVisualStyleBackColor = true;
+            this.ExportData.Click += new System.EventHandler(this.ExportData_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(542, 262);
+            this.Controls.Add(this.ImportAndExportBox);
             this.Controls.Add(this.L_PB_Settings);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label5);
@@ -347,6 +423,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numDraws)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minPowerBall)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minBalls)).EndInit();
+            this.ImportAndExportBox.ResumeLayout(false);
+            this.ImportAndExportBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -374,6 +452,12 @@
         private System.Windows.Forms.NumericUpDown minPowerBall;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.NumericUpDown numDraws;
+        private System.Windows.Forms.GroupBox ImportAndExportBox;
+        private System.Windows.Forms.RadioButton PrintLotteryStats;
+        private System.Windows.Forms.RadioButton PrintPowerBallDraws;
+        private System.Windows.Forms.RadioButton PrintLottoDraws;
+        private System.Windows.Forms.Button ExportData;
+        private System.Windows.Forms.RadioButton PrintPowerBallStats;
     }
 }
 

@@ -16,14 +16,13 @@ namespace LotteryTools
      */
     class Lotto_machine
     {
-        private int newBall = 0;
         //! \brief Constructor 
         public Lotto_machine()
         {
             
         }
         //! \brief Randomly selects a lotto ball in the provided range of min & max. 
-        public int newLottoNUmber(int min = 1, int max = 50)
+        public  int newLottoNUmber(int min = 1, int max = 50)
         {
             int ball;
             Random r = new Random();
@@ -31,11 +30,13 @@ namespace LotteryTools
             return ball;
         }
         //! \brief Determines weather all values in the lotto draw is unique. 
-        private void uniquenessCheck(List<int> balls, int min, int max)
+        private int uniquenessCheck(List<int> balls, int min, int max)
         {
+            int newBall = 0;
             do
                 newBall = newLottoNUmber(min, max);
             while (balls.Contains(newBall));
+            return newBall;
         }
         /*! \brief Performs the lotto draw
          * 
@@ -45,10 +46,11 @@ namespace LotteryTools
          */
         public List<int> Lotto_numbers(int numBalls, int min = 1, int max = 50)
         {
+            int newBall = 0;
             List<int> balls = new List<int>();
             for (int i = 0; i < numBalls; i++)
             {
-                uniquenessCheck(balls, min, max);
+                newBall = uniquenessCheck(balls, min, max);
                 balls.Add(newBall);
             }
             return balls;
@@ -60,10 +62,10 @@ namespace LotteryTools
      */
     class Lotto_Statistics
     {
-        protected List<List<int>> PowerBall; //!< \brief Collection of draws
-        protected List<List<int>> Lottery; //!< \brief Collection of draws
-        private Dictionary<int, int> PowerBallCollection; //!< \brief Records the number of occurrences of the ball
-        private Dictionary<int, int> LotteryCollection; //!< \brief Records the number of occurrences of the ball
+        public List<List<int>> PowerBall; //!< \brief Collection of draws
+        public List<List<int>> Lottery; //!< \brief Collection of draws
+        public Dictionary<int, int> PowerBallCollection; //!< \brief Records the number of occurrences of the ball
+        public Dictionary<int, int> LotteryCollection; //!< \brief Records the number of occurrences of the ball
         static private Lotto_Statistics instance = null;
         static public Lotto_Statistics getInstance() //!< \brief Implementation of the singleton pattern.
         {

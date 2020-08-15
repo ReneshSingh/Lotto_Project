@@ -29,49 +29,58 @@ namespace IOModule
             return IOM;
         }
         //! \brief Gets the file name from the user with the file types in the extentions variable. 
-        static public string getFileName(string extention)
+        static public string getFileName(out string separator, string extention = "CSV | *.csv | TSV | *.tsv | Text | *.txt | Word | *.doc | All Files | *.*")
         {
             SaveFileDialog sfd = new SaveFileDialog();
             string fileName = null;
+            int indexValue = 0;
             sfd.InitialDirectory = ".../...";
-            sfd.DefaultExt = extention;
+            sfd.DefaultExt = "*.*";
             sfd.Filter = extention;
             sfd.RestoreDirectory = true;
             if (sfd.ShowDialog() == DialogResult.OK)
             {
-                fileName = sfd.FileName; 
+                fileName = sfd.FileName;
+                indexValue = sfd.FilterIndex;
             }
+            if (indexValue == 1)
+                separator = ",";
+            else if(indexValue == 2)
+                separator = "\t";
+            else
+                separator = " ";
             return fileName;
         }
         //! \brief writes formated text to file.
         public void TextToFile(string text, string fileName = null)
         {
+            string temp;
             if (fileName == null)
-                fileName = getFileName("Text file (*txt) | *.txt | All files (*.*) | *.* | Word (*.doc) | *.doc");
+                fileName = getFileName(out temp, "Text file (*txt) | *.txt | All files (*.*) | *.* | Word (*.doc) | *.doc");
             if (fileName != null)
                 System.IO.File.WriteAllText(fileName, text);
         }
         //! \brief Writes dat in a CSV format to a user selected file.
-        public void ToCSVfile(Dictionary<int, int> data)
+        public void ToSeparatedFile(Dictionary<int, int> data, string FileName, string separator = ",")
         {
             string text = null;
             foreach (KeyValuePair<int, int> pair in data)
-                text += pair.Key + "," + pair.Value + "\n";
-            TextToFile(text, getFileName("CSV (*.csv) | *.csv"));
+                text += pair.Key + separator + pair.Value + "\n";
+            TextToFile(text, FileName);
         }
         //! \brief Writes dat in a CSV format to a user selected file.
-        public void ToCSV(List<List<int>> data)
+        public void ToSeparatedFile(List<List<int>> data, string FileName, string separator = ",")
         {
             string text = null;
             foreach (List<int> list in data)
             {
                 foreach (int item in list)
-                    text += item.ToString() + ",";
+                    text += item.ToString() + separator;
                 text += "\n";
             }
-            TextToFile(text, getFileName("CSV (*.csv) | *.csv"));
+            TextToFile(text, FileName);
         }
-        //! \brief Writes dat to a TSV format to a user selected file.
+        /* //! \brief Writes dat to a TSV format to a user selected file.
         public void ToTSV(Dictionary<int, int> data)
         {
             string text = null;
@@ -90,7 +99,7 @@ namespace IOModule
                 text += "\n";
             }
             TextToFile(text, getFileName("CSV (*.csv) | *.csv"));
-        }
+        }*/
 
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IOModule;
 using LotteryTools;
 
 namespace WindowsFormsApplication1
@@ -39,7 +40,7 @@ namespace WindowsFormsApplication1
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            if ((Convert.ToInt32(maxBalls.Value) - Convert.ToInt32(minBalls.Value) >= 5))
+            if ((Convert.ToInt32(maxBalls.Value) - Convert.ToInt32(minBalls.Value) >= 6))
             {
                 for (int i = 0; i < Convert.ToInt32(numDraws.Value); i++)
                 {
@@ -104,6 +105,22 @@ namespace WindowsFormsApplication1
         private void maxBalls_ValueChanged(object sender, EventArgs e)
         {
             maxBalls.Minimum = minBalls.Minimum + 6;
+        }
+
+        private void ExportData_Click(object sender, EventArgs e)
+        {
+            Lotto_Statistics ls = Lotto_Statistics.getInstance();
+            OutputModule output = OutputModule.getInstance();
+            string separator = null, fileName;
+            fileName = OutputModule.getFileName(out separator);
+            if (PrintLottoDraws.Checked == true)
+                output.ToSeparatedFile(ls.Lottery, fileName);
+            if (PrintLotteryStats.Checked == true)
+                output.ToSeparatedFile(ls.LotteryCollection, fileName);
+            if (PrintPowerBallDraws.Checked == true)
+                output.ToSeparatedFile(ls.PowerBall, fileName);
+            if (PrintPowerBallStats.Checked == true)
+                output.ToSeparatedFile(ls.PowerBallCollection, fileName);
         }
     }
 }
