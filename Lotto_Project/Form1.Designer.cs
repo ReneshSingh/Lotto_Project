@@ -49,11 +49,11 @@
             this.minPowerBall = new System.Windows.Forms.NumericUpDown();
             this.minBalls = new System.Windows.Forms.NumericUpDown();
             this.ImportAndExportBox = new System.Windows.Forms.GroupBox();
-            this.PrintLottoDraws = new System.Windows.Forms.RadioButton();
-            this.PrintPowerBallDraws = new System.Windows.Forms.RadioButton();
-            this.PrintLotteryStats = new System.Windows.Forms.RadioButton();
-            this.PrintPowerBallStats = new System.Windows.Forms.RadioButton();
             this.ExportData = new System.Windows.Forms.Button();
+            this.PrintPowerBallStats = new System.Windows.Forms.RadioButton();
+            this.PrintLotteryStats = new System.Windows.Forms.RadioButton();
+            this.PrintPowerBallDraws = new System.Windows.Forms.RadioButton();
+            this.PrintLottoDraws = new System.Windows.Forms.RadioButton();
             this.L_PB_Settings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maxPowerBall)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maxBalls)).BeginInit();
@@ -240,6 +240,11 @@
             // maxPowerBall
             // 
             this.maxPowerBall.Location = new System.Drawing.Point(171, 52);
+            this.maxPowerBall.Maximum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            0});
             this.maxPowerBall.Minimum = new decimal(new int[] {
             2,
             0,
@@ -259,6 +264,11 @@
             // maxBalls
             // 
             this.maxBalls.Location = new System.Drawing.Point(135, 21);
+            this.maxBalls.Maximum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            0});
             this.maxBalls.Minimum = new decimal(new int[] {
             6,
             0,
@@ -278,6 +288,11 @@
             // numDraws
             // 
             this.numDraws.Location = new System.Drawing.Point(104, 81);
+            this.numDraws.Maximum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            0});
             this.numDraws.Minimum = new decimal(new int[] {
             1,
             0,
@@ -296,6 +311,11 @@
             // minPowerBall
             // 
             this.minPowerBall.Location = new System.Drawing.Point(104, 50);
+            this.minPowerBall.Maximum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            0});
             this.minPowerBall.Minimum = new decimal(new int[] {
             1,
             0,
@@ -314,6 +334,11 @@
             // minBalls
             // 
             this.minBalls.Location = new System.Drawing.Point(68, 21);
+            this.minBalls.Maximum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            0});
             this.minBalls.Minimum = new decimal(new int[] {
             1,
             0,
@@ -343,38 +368,15 @@
             this.ImportAndExportBox.TabStop = false;
             this.ImportAndExportBox.Text = "Import and Export";
             // 
-            // PrintLottoDraws
+            // ExportData
             // 
-            this.PrintLottoDraws.AutoSize = true;
-            this.PrintLottoDraws.Location = new System.Drawing.Point(9, 27);
-            this.PrintLottoDraws.Name = "PrintLottoDraws";
-            this.PrintLottoDraws.Size = new System.Drawing.Size(82, 17);
-            this.PrintLottoDraws.TabIndex = 0;
-            this.PrintLottoDraws.TabStop = true;
-            this.PrintLottoDraws.Text = "Lotto Draws";
-            this.PrintLottoDraws.UseVisualStyleBackColor = true;
-            // 
-            // PrintPowerBallDraws
-            // 
-            this.PrintPowerBallDraws.AutoSize = true;
-            this.PrintPowerBallDraws.Location = new System.Drawing.Point(104, 27);
-            this.PrintPowerBallDraws.Name = "PrintPowerBallDraws";
-            this.PrintPowerBallDraws.Size = new System.Drawing.Size(105, 17);
-            this.PrintPowerBallDraws.TabIndex = 0;
-            this.PrintPowerBallDraws.TabStop = true;
-            this.PrintPowerBallDraws.Text = "PowerBall Draws";
-            this.PrintPowerBallDraws.UseVisualStyleBackColor = true;
-            // 
-            // PrintLotteryStats
-            // 
-            this.PrintLotteryStats.AutoSize = true;
-            this.PrintLotteryStats.Location = new System.Drawing.Point(9, 50);
-            this.PrintLotteryStats.Name = "PrintLotteryStats";
-            this.PrintLotteryStats.Size = new System.Drawing.Size(82, 17);
-            this.PrintLotteryStats.TabIndex = 0;
-            this.PrintLotteryStats.TabStop = true;
-            this.PrintLotteryStats.Text = "Lottery stats";
-            this.PrintLotteryStats.UseVisualStyleBackColor = true;
+            this.ExportData.Location = new System.Drawing.Point(68, 73);
+            this.ExportData.Name = "ExportData";
+            this.ExportData.Size = new System.Drawing.Size(75, 23);
+            this.ExportData.TabIndex = 1;
+            this.ExportData.Text = "&Export";
+            this.ExportData.UseVisualStyleBackColor = true;
+            this.ExportData.Click += new System.EventHandler(this.ExportData_Click);
             // 
             // PrintPowerBallStats
             // 
@@ -387,15 +389,38 @@
             this.PrintPowerBallStats.Text = "PowerBall stats";
             this.PrintPowerBallStats.UseVisualStyleBackColor = true;
             // 
-            // ExportData
+            // PrintLotteryStats
             // 
-            this.ExportData.Location = new System.Drawing.Point(68, 73);
-            this.ExportData.Name = "ExportData";
-            this.ExportData.Size = new System.Drawing.Size(75, 23);
-            this.ExportData.TabIndex = 1;
-            this.ExportData.Text = "&Export";
-            this.ExportData.UseVisualStyleBackColor = true;
-            this.ExportData.Click += new System.EventHandler(this.ExportData_Click);
+            this.PrintLotteryStats.AutoSize = true;
+            this.PrintLotteryStats.Location = new System.Drawing.Point(9, 50);
+            this.PrintLotteryStats.Name = "PrintLotteryStats";
+            this.PrintLotteryStats.Size = new System.Drawing.Size(82, 17);
+            this.PrintLotteryStats.TabIndex = 0;
+            this.PrintLotteryStats.TabStop = true;
+            this.PrintLotteryStats.Text = "Lottery stats";
+            this.PrintLotteryStats.UseVisualStyleBackColor = true;
+            // 
+            // PrintPowerBallDraws
+            // 
+            this.PrintPowerBallDraws.AutoSize = true;
+            this.PrintPowerBallDraws.Location = new System.Drawing.Point(104, 27);
+            this.PrintPowerBallDraws.Name = "PrintPowerBallDraws";
+            this.PrintPowerBallDraws.Size = new System.Drawing.Size(105, 17);
+            this.PrintPowerBallDraws.TabIndex = 0;
+            this.PrintPowerBallDraws.TabStop = true;
+            this.PrintPowerBallDraws.Text = "PowerBall Draws";
+            this.PrintPowerBallDraws.UseVisualStyleBackColor = true;
+            // 
+            // PrintLottoDraws
+            // 
+            this.PrintLottoDraws.AutoSize = true;
+            this.PrintLottoDraws.Location = new System.Drawing.Point(9, 27);
+            this.PrintLottoDraws.Name = "PrintLottoDraws";
+            this.PrintLottoDraws.Size = new System.Drawing.Size(82, 17);
+            this.PrintLottoDraws.TabIndex = 0;
+            this.PrintLottoDraws.TabStop = true;
+            this.PrintLottoDraws.Text = "Lotto Draws";
+            this.PrintLottoDraws.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
