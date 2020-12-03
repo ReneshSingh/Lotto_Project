@@ -12,18 +12,26 @@ using LotteryTools;
 
 namespace WindowsFormsApplication1
 {
+    /*! \class Form1
+     * \brief THis is the UI controler class
+     */
     public partial class Form1 : Form
     {
         private Lotto_machine gen;
         private List<Label> UILabels;
         private List<int> balls = null;
         private Lotto_Statistics LottoRecords;
+        /*! \brief Outputs the drawn balls to the UI and displays the message sent to it.
+         * 
+         * Gets the results from the lotto draw from the internal function and displays the balls drawn along with a message to the UI. 
+         */
         private void toUI(List<int> balls, string message)
         {
             UILabels[0].Text = message;
             for (int i = 1; i < UILabels.Count(); i++)
                 UILabels[i].Text = balls[i-1].ToString();
         }
+        //! \brief UI setup. 
         public Form1()
         {
             InitializeComponent();
@@ -38,6 +46,10 @@ namespace WindowsFormsApplication1
             UILabels.Add(label6);
             UILabels.Add(label7);
         }
+        /*! \brief Performs a 6 ball lotto draw. 
+         * 
+         * This functions performs a 6 ball draw for a lottery and then sends the results of the draw to the UI output function. 
+         */
         private void button1_Click(object sender, EventArgs e)
         {
             if ((Convert.ToInt32(maxBalls.Value) - Convert.ToInt32(minBalls.Value) >= 6))
@@ -53,6 +65,7 @@ namespace WindowsFormsApplication1
             else
                 displayMSG.Text = "Not enough balls in range.";
         }
+        
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -85,6 +98,11 @@ namespace WindowsFormsApplication1
         {
 
         }
+
+        /*! \brief Performs a PowerBall draw
+         * 
+         * Performs the PowerBall  draw based on the users configurations for both the normal balls and the powerball 
+         */
         private void button2_Click(object sender, EventArgs e)
         {
             if (Convert.ToInt32(maxBalls.Value) - Convert.ToInt32(minBalls.Value) >= 5)
@@ -106,7 +124,10 @@ namespace WindowsFormsApplication1
         {
             maxBalls.Minimum = minBalls.Minimum + 6;
         }
-
+        /*! \brief Exports either the lotto or statistical data to the users indicated file and format.
+         * 
+         * Checks which dataset the user has chosen to export and then connects that dataset with the File IO class. 
+         */
         private void ExportData_Click(object sender, EventArgs e)
         {
             Lotto_Statistics ls = Lotto_Statistics.getInstance();
