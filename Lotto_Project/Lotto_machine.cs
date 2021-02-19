@@ -66,13 +66,15 @@ namespace LotteryTools
         public List<List<int>> Lottery; //!< \brief Collection of draws
         public Dictionary<int, int> PowerBallCollection; //!< \brief Records the number of occurrences of the ball
         public Dictionary<int, int> LotteryCollection; //!< \brief Records the number of occurrences of the ball
-        static private Lotto_Statistics instance = null;
-        static public Lotto_Statistics getInstance() //!< \brief Implementation of the singleton pattern.
+        static private Lotto_Statistics instance = null; //!< \brief Singleton instance of this calss to be shared or used.
+        //! \brief Implementation of the singleton pattern.
+        static public Lotto_Statistics getInstance() 
         {
             if (instance == null)
                 instance = new Lotto_Statistics();
             return instance;
         }
+        //! \brief Constructor 
         private Lotto_Statistics()
         {
             PowerBall = new List<List<int>>();
@@ -80,11 +82,13 @@ namespace LotteryTools
             PowerBallCollection = new Dictionary<int, int>();
             LotteryCollection = new Dictionary<int, int>();
         }
-        public void AddPowerBallDraw(List<int> Draw) //!< \brief Adds the draw to the record of draws.
+        //! \brief Adds the draw to the record of draws.
+        public void AddPowerBallDraw(List<int> Draw) 
         {
             PowerBall.Add(Draw);
         }
-        public void AddLotteryDraw(List<int> Draw) //!< \brief Adds the draw to the record of draws.
+        //! \brief Adds the draw to the record of draws.
+        public void AddLotteryDraw(List<int> Draw) 
         {
             Lottery.Add(Draw);
         }

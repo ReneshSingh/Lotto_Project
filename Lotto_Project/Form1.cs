@@ -17,10 +17,10 @@ namespace WindowsFormsApplication1
      */
     public partial class Form1 : Form
     {
-        private Lotto_machine gen;
-        private List<Label> UILabels;
-        private List<int> balls = null;
-        private Lotto_Statistics LottoRecords;
+        private Lotto_machine gen; //!< \brief Instant of the lotto mechine which handles drawing the balls. 
+        private List<Label> UILabels; //!< \brief Holds an aray of all the labels in the UI.
+        private List<int> balls = null; //!< \brief Aray to hod the lotto balls been drawn. 
+        private Lotto_Statistics LottoRecords; //!<  \brief Holds the statistics of all the draws. 
         /*! \brief Outputs the drawn balls to the UI and displays the message sent to it.
          * 
          * Gets the results from the lotto draw from the internal function and displays the balls drawn along with a message to the UI. 
