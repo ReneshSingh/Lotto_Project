@@ -6,12 +6,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*! \namespace IOModule
+ * \brief This NameSpace provides classes and functions to input and output data.
+ */
 namespace IOModule
 {
+    /*! \class OutputModule
+     * \brief Provides functions to  write program output to a file of the users choice. 
+     * 
+     * Provides functions to get file names; preferred separators and output content to a file. 
+     */
     class OutputModule
     {
-        static private OutputModule IOM = null;
-        //! \brief Constructor for singleton pattern.C
+        static private OutputModule IOM = null; 
+        //! \brief Constructor for singleton pattern.
         private OutputModule()
         {
             
