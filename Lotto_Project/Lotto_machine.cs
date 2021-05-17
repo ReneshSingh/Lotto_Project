@@ -64,6 +64,8 @@ namespace LotteryTools
     {
         public List<List<int>> PowerBall; //!< \brief Collection of draws
         public List<List<int>> Lottery; //!< \brief Collection of draws
+        public List <string> recordsHeaders; //!< \brief Stores the headers for the collection of draws.
+        public List<string> ballStatsHeaders; //!< \brief Contains headers for the statistics for number of balls drawn.
         public Dictionary<int, int> PowerBallCollection; //!< \brief Records the number of occurrences of the ball
         public Dictionary<int, int> LotteryCollection; //!< \brief Records the number of occurrences of the ball
         static private Lotto_Statistics instance = null; //!< \brief Singleton instance of this calss to be shared or used.
@@ -81,6 +83,17 @@ namespace LotteryTools
             Lottery = new List<List<int>>();
             PowerBallCollection = new Dictionary<int, int>();
             LotteryCollection = new Dictionary<int, int>();
+            recordsHeaders = new List<string>();
+            ballStatsHeaders = new List<string>();
+            ballStatsHeaders.Add("Balls");
+            ballStatsHeaders.Add("Occurrences");
+            recordsHeaders.Add("Ball_1");
+            recordsHeaders.Add("Ball_2");
+            recordsHeaders.Add("Ball_3");
+            recordsHeaders.Add("Ball_4");
+            recordsHeaders.Add("Ball_5");
+            recordsHeaders.Add("Ball_6/Power ball");
+
         }
         //! \brief Adds the draw to the record of draws.
         public void AddPowerBallDraw(List<int> Draw) 

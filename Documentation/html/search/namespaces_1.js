@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lotterytools_29',['LotteryTools',['../namespace_lottery_tools.html',1,'']]]
+  ['lotterytools_31',['LotteryTools',['../namespace_lottery_tools.html',1,'']]]
 ];

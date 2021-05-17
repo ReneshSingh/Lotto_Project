@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['texttofile_20',['TextToFile',['../class_i_o_module_1_1_output_module.html#a358b08ecb4563f8df29686cafc7b2afb',1,'IOModule::OutputModule']]],
-  ['toseparatedfile_21',['ToSeparatedFile',['../class_i_o_module_1_1_output_module.html#a50a667cf6c6352b3da372feb7584bd0a',1,'IOModule.OutputModule.ToSeparatedFile(Dictionary&lt; int, int &gt; data, string FileName, string separator=&quot;,&quot;)'],['../class_i_o_module_1_1_output_module.html#a7d936db7a10b569ed74dabd1db2ff17d',1,'IOModule.OutputModule.ToSeparatedFile(List&lt; List&lt; int &gt;&gt; data, string FileName, string separator=&quot;,&quot;)']]]
+  ['powerball_18',['PowerBall',['../class_lottery_tools_1_1_lotto___statistics.html#a10260cc2b0384b53ac570b5cfda258a3',1,'LotteryTools::Lotto_Statistics']]],
+  ['powerballcollection_19',['PowerBallCollection',['../class_lottery_tools_1_1_lotto___statistics.html#ad0f4bff020cc108130e43baf502b7eb1',1,'LotteryTools::Lotto_Statistics']]],
+  ['powerballstatistics_20',['PowerBallStatistics',['../class_lottery_tools_1_1_lotto___statistics.html#ab5ab372270c93d12b5fb15dd714c009b',1,'LotteryTools.Lotto_Statistics.PowerBallStatistics(int Ball)'],['../class_lottery_tools_1_1_lotto___statistics.html#a68fcbc0e00844a764a377d13133fc155',1,'LotteryTools.Lotto_Statistics.PowerBallStatistics(List&lt; int &gt; Draw)']]]
 ];

@@ -69,17 +69,23 @@ namespace IOModule
                 System.IO.File.WriteAllText(fileName, text);
         }
         //! \brief Writes dat in a CSV format to a user selected file.
-        public void ToSeparatedFile(Dictionary<int, int> data, string FileName, string separator = ",")
+        public void ToSeparatedFile(Dictionary<int, int> data, List<string> headers, string FileName, string separator = ",")
         {
             string text = null;
+            foreach (string item in headers)
+                text += item + separator;
+            text += "\n";
             foreach (KeyValuePair<int, int> pair in data)
                 text += pair.Key + separator + pair.Value + "\n";
             TextToFile(text, FileName);
         }
         //! \brief Writes dat in a CSV format to a user selected file.
-        public void ToSeparatedFile(List<List<int>> data, string FileName, string separator = ",")
+        public void ToSeparatedFile(List<List<int>> data, List<string> headers, string FileName, string separator = ",")
         {
             string text = null;
+            foreach (string item in headers)
+                text += item + separator;
+            text += "\n";
             foreach (List<int> list in data)
             {
                 foreach (int item in list)
@@ -88,26 +94,5 @@ namespace IOModule
             }
             TextToFile(text, FileName);
         }
-        /* //! \brief Writes dat to a TSV format to a user selected file.
-        public void ToTSV(Dictionary<int, int> data)
-        {
-            string text = null;
-            foreach (KeyValuePair<int, int> pair in data)
-                text += pair.Key + "\t" + pair.Value + "\n";
-            TextToFile(text, getFileName("CSV (*.csv) | *.csv"));
-        }
-        //! \brief Writes dat to a TSV format to a user selected file.
-        public void ToTSV(List<List<int>> data)
-        {
-            string text = null;
-            foreach (List<int> list in data)
-            {
-                foreach (int item in list)
-                    text += item.ToString() + "\t";
-                text += "\n";
-            }
-            TextToFile(text, getFileName("CSV (*.csv) | *.csv"));
-        }*/
-
     }
 }

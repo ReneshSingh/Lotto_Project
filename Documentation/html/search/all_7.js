@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['outputmodule_16',['OutputModule',['../class_i_o_module_1_1_output_module.html',1,'IOModule']]]
+  ['newlottonumber_16',['newLottoNUmber',['../class_lottery_tools_1_1_lotto__machine.html#acf148b94024f45bb93c774e18232dd3c',1,'LotteryTools::Lotto_machine']]]
 ];

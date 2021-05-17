@@ -6,8 +6,10 @@ var class_lottery_tools_1_1_lotto___statistics =
     [ "LoteryStatistics", "class_lottery_tools_1_1_lotto___statistics.html#a064977716d17ebdfd389dcb426b81b28", null ],
     [ "PowerBallStatistics", "class_lottery_tools_1_1_lotto___statistics.html#ab5ab372270c93d12b5fb15dd714c009b", null ],
     [ "PowerBallStatistics", "class_lottery_tools_1_1_lotto___statistics.html#a68fcbc0e00844a764a377d13133fc155", null ],
+    [ "ballStatsHeaders", "class_lottery_tools_1_1_lotto___statistics.html#a032df9bc81d095b045ab74bbde070d23", null ],
     [ "Lottery", "class_lottery_tools_1_1_lotto___statistics.html#ac77cab701bec561ce2bf9064da42265e", null ],
     [ "LotteryCollection", "class_lottery_tools_1_1_lotto___statistics.html#a22d3d3a8e008b921df9e72a909a5ed36", null ],
     [ "PowerBall", "class_lottery_tools_1_1_lotto___statistics.html#a10260cc2b0384b53ac570b5cfda258a3", null ],
-    [ "PowerBallCollection", "class_lottery_tools_1_1_lotto___statistics.html#ad0f4bff020cc108130e43baf502b7eb1", null ]
+    [ "PowerBallCollection", "class_lottery_tools_1_1_lotto___statistics.html#ad0f4bff020cc108130e43baf502b7eb1", null ],
+    [ "recordsHeaders", "class_lottery_tools_1_1_lotto___statistics.html#ac4ebfbc635d25fc49be24abb898cce26", null ]
 ];

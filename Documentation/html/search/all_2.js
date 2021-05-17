@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['form1_3',['Form1',['../class_windows_forms_application1_1_1_form1.html#a69c9068cd58521646d5e961a8b88a020',1,'WindowsFormsApplication1.Form1.Form1()'],['../class_windows_forms_application1_1_1_form1.html',1,'WindowsFormsApplication1.Form1']]]
+  ['dispose_3',['Dispose',['../class_windows_forms_application1_1_1_form1.html#a634a80ac7348fe429fa032d0edffee00',1,'WindowsFormsApplication1::Form1']]]
 ];

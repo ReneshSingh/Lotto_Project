@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dispose_2',['Dispose',['../class_windows_forms_application1_1_1_form1.html#a634a80ac7348fe429fa032d0edffee00',1,'WindowsFormsApplication1::Form1']]]
+  ['ballstatsheaders_2',['ballStatsHeaders',['../class_lottery_tools_1_1_lotto___statistics.html#a032df9bc81d095b045ab74bbde070d23',1,'LotteryTools::Lotto_Statistics']]]
 ];

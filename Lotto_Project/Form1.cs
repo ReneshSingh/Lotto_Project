@@ -36,6 +36,7 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
             gen = new Lotto_machine();
+            displayMSG.Text = " ";
             LottoRecords = Lotto_Statistics.getInstance();
             UILabels = new List<Label>();
             UILabels.Add(displayMSG);
@@ -52,6 +53,8 @@ namespace WindowsFormsApplication1
          */
         private void button1_Click(object sender, EventArgs e)
         {
+            displayMSG.Text = "Processing ...";
+            button1.Enabled = false;
             if ((Convert.ToInt32(maxBalls.Value) - Convert.ToInt32(minBalls.Value) >= 6))
             {
                 for (int i = 0; i < Convert.ToInt32(numDraws.Value); i++)
@@ -64,6 +67,7 @@ namespace WindowsFormsApplication1
             }
             else
                 displayMSG.Text = "Not enough balls in range.";
+            button1.Enabled = true; 
         }
         
         private void Form1_Load(object sender, EventArgs e)
@@ -105,6 +109,8 @@ namespace WindowsFormsApplication1
          */
         private void button2_Click(object sender, EventArgs e)
         {
+            displayMSG.Text = "Processing ...";
+            button2.Enabled = false;
             if (Convert.ToInt32(maxBalls.Value) - Convert.ToInt32(minBalls.Value) >= 5)
             {
                 for (int i = 0; i < Convert.ToInt32(numDraws.Value); i++)
@@ -119,6 +125,7 @@ namespace WindowsFormsApplication1
             }
             else
                 displayMSG.Text = "Not enough balls in range.";
+            button2.Enabled = true;
         }
         private void maxBalls_ValueChanged(object sender, EventArgs e)
         {
@@ -135,13 +142,13 @@ namespace WindowsFormsApplication1
             string separator = null, fileName;
             fileName = OutputModule.getFileName(out separator);
             if (PrintLottoDraws.Checked == true)
-                output.ToSeparatedFile(ls.Lottery, fileName);
+                output.ToSeparatedFile(ls.Lottery, ls.recordsHeaders,fileName);
             if (PrintLotteryStats.Checked == true)
-                output.ToSeparatedFile(ls.LotteryCollection, fileName);
+                output.ToSeparatedFile(ls.LotteryCollection, ls.ballStatsHeaders,fileName);
             if (PrintPowerBallDraws.Checked == true)
-                output.ToSeparatedFile(ls.PowerBall, fileName);
+                output.ToSeparatedFile(ls.PowerBall, ls.recordsHeaders,fileName);
             if (PrintPowerBallStats.Checked == true)
-                output.ToSeparatedFile(ls.PowerBallCollection, fileName);
+                output.ToSeparatedFile(ls.PowerBallCollection, ls.ballStatsHeaders,fileName);
         }
     }
 }
