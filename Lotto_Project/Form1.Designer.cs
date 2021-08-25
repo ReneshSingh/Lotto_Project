@@ -65,9 +65,10 @@
             // 
             // button1
             // 
+            this.button1.AccessibleName = "Press to generate Lottery numbers (Alt+L)";
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(16, 15);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(177, 28);
             this.button1.TabIndex = 0;
@@ -172,8 +173,9 @@
             // 
             // button2
             // 
+            this.button2.AccessibleName = "Press to generate Power ball numbers (Alt+P)";
             this.button2.Location = new System.Drawing.Point(201, 15);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(161, 28);
             this.button2.TabIndex = 2;
@@ -195,9 +197,9 @@
             this.L_PB_Settings.Controls.Add(this.minPowerBall);
             this.L_PB_Settings.Controls.Add(this.minBalls);
             this.L_PB_Settings.Location = new System.Drawing.Point(404, 15);
-            this.L_PB_Settings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.L_PB_Settings.Margin = new System.Windows.Forms.Padding(4);
             this.L_PB_Settings.Name = "L_PB_Settings";
-            this.L_PB_Settings.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.L_PB_Settings.Padding = new System.Windows.Forms.Padding(4);
             this.L_PB_Settings.Size = new System.Drawing.Size(300, 150);
             this.L_PB_Settings.TabIndex = 3;
             this.L_PB_Settings.TabStop = false;
@@ -255,8 +257,9 @@
             // 
             // maxPowerBall
             // 
+            this.maxPowerBall.AccessibleName = "Largest number to be chosen for the power ball";
             this.maxPowerBall.Location = new System.Drawing.Point(228, 64);
-            this.maxPowerBall.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.maxPowerBall.Margin = new System.Windows.Forms.Padding(4);
             this.maxPowerBall.Maximum = new decimal(new int[] {
             -727379969,
             232,
@@ -269,7 +272,7 @@
             0});
             this.maxPowerBall.Name = "maxPowerBall";
             this.maxPowerBall.Size = new System.Drawing.Size(60, 22);
-            this.maxPowerBall.TabIndex = 0;
+            this.maxPowerBall.TabIndex = 6;
             this.maxPowerBall.Tag = "Ball min value";
             this.maxPowerBall.Value = new decimal(new int[] {
             6,
@@ -280,8 +283,9 @@
             // 
             // maxBalls
             // 
+            this.maxBalls.AccessibleName = "Largest number to be chosen for the Lottery. ";
             this.maxBalls.Location = new System.Drawing.Point(180, 26);
-            this.maxBalls.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.maxBalls.Margin = new System.Windows.Forms.Padding(4);
             this.maxBalls.Maximum = new decimal(new int[] {
             -727379969,
             232,
@@ -294,7 +298,7 @@
             0});
             this.maxBalls.Name = "maxBalls";
             this.maxBalls.Size = new System.Drawing.Size(60, 22);
-            this.maxBalls.TabIndex = 0;
+            this.maxBalls.TabIndex = 4;
             this.maxBalls.Tag = "Ball min value";
             this.maxBalls.Value = new decimal(new int[] {
             7,
@@ -305,8 +309,9 @@
             // 
             // numDraws
             // 
+            this.numDraws.AccessibleName = "Number of draws";
             this.numDraws.Location = new System.Drawing.Point(139, 100);
-            this.numDraws.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numDraws.Margin = new System.Windows.Forms.Padding(4);
             this.numDraws.Maximum = new decimal(new int[] {
             -727379969,
             232,
@@ -319,7 +324,7 @@
             0});
             this.numDraws.Name = "numDraws";
             this.numDraws.Size = new System.Drawing.Size(101, 22);
-            this.numDraws.TabIndex = 0;
+            this.numDraws.TabIndex = 7;
             this.numDraws.Tag = "Ball min value";
             this.numDraws.Value = new decimal(new int[] {
             1,
@@ -329,8 +334,9 @@
             // 
             // minPowerBall
             // 
+            this.minPowerBall.AccessibleName = "Smallest number to be chosen for the power ball";
             this.minPowerBall.Location = new System.Drawing.Point(139, 62);
-            this.minPowerBall.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.minPowerBall.Margin = new System.Windows.Forms.Padding(4);
             this.minPowerBall.Maximum = new decimal(new int[] {
             -727379969,
             232,
@@ -343,7 +349,7 @@
             0});
             this.minPowerBall.Name = "minPowerBall";
             this.minPowerBall.Size = new System.Drawing.Size(60, 22);
-            this.minPowerBall.TabIndex = 0;
+            this.minPowerBall.TabIndex = 5;
             this.minPowerBall.Tag = "Ball min value";
             this.minPowerBall.Value = new decimal(new int[] {
             1,
@@ -353,8 +359,10 @@
             // 
             // minBalls
             // 
+            this.minBalls.AccessibleDescription = "Select a number greater then 1";
+            this.minBalls.AccessibleName = "Smallest number to be chosen for the Lottery. ";
             this.minBalls.Location = new System.Drawing.Point(91, 26);
-            this.minBalls.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.minBalls.Margin = new System.Windows.Forms.Padding(4);
             this.minBalls.Maximum = new decimal(new int[] {
             -727379969,
             232,
@@ -367,7 +375,7 @@
             0});
             this.minBalls.Name = "minBalls";
             this.minBalls.Size = new System.Drawing.Size(60, 22);
-            this.minBalls.TabIndex = 0;
+            this.minBalls.TabIndex = 3;
             this.minBalls.Tag = "Ball min value";
             this.minBalls.Value = new decimal(new int[] {
             1,
@@ -383,9 +391,9 @@
             this.ImportAndExportBox.Controls.Add(this.PrintPowerBallDraws);
             this.ImportAndExportBox.Controls.Add(this.PrintLottoDraws);
             this.ImportAndExportBox.Location = new System.Drawing.Point(404, 172);
-            this.ImportAndExportBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ImportAndExportBox.Margin = new System.Windows.Forms.Padding(4);
             this.ImportAndExportBox.Name = "ImportAndExportBox";
-            this.ImportAndExportBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ImportAndExportBox.Padding = new System.Windows.Forms.Padding(4);
             this.ImportAndExportBox.Size = new System.Drawing.Size(300, 135);
             this.ImportAndExportBox.TabIndex = 4;
             this.ImportAndExportBox.TabStop = false;
@@ -393,8 +401,9 @@
             // 
             // ExportData
             // 
+            this.ExportData.AccessibleName = "Press to export results to file (Alt+E)";
             this.ExportData.Location = new System.Drawing.Point(91, 90);
-            this.ExportData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ExportData.Margin = new System.Windows.Forms.Padding(4);
             this.ExportData.Name = "ExportData";
             this.ExportData.Size = new System.Drawing.Size(100, 28);
             this.ExportData.TabIndex = 1;
@@ -406,7 +415,7 @@
             // 
             this.PrintPowerBallStats.AutoSize = true;
             this.PrintPowerBallStats.Location = new System.Drawing.Point(139, 62);
-            this.PrintPowerBallStats.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PrintPowerBallStats.Margin = new System.Windows.Forms.Padding(4);
             this.PrintPowerBallStats.Name = "PrintPowerBallStats";
             this.PrintPowerBallStats.Size = new System.Drawing.Size(125, 21);
             this.PrintPowerBallStats.TabIndex = 0;
@@ -418,7 +427,7 @@
             // 
             this.PrintLotteryStats.AutoSize = true;
             this.PrintLotteryStats.Location = new System.Drawing.Point(12, 62);
-            this.PrintLotteryStats.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PrintLotteryStats.Margin = new System.Windows.Forms.Padding(4);
             this.PrintLotteryStats.Name = "PrintLotteryStats";
             this.PrintLotteryStats.Size = new System.Drawing.Size(107, 21);
             this.PrintLotteryStats.TabIndex = 0;
@@ -430,7 +439,7 @@
             // 
             this.PrintPowerBallDraws.AutoSize = true;
             this.PrintPowerBallDraws.Location = new System.Drawing.Point(139, 33);
-            this.PrintPowerBallDraws.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PrintPowerBallDraws.Margin = new System.Windows.Forms.Padding(4);
             this.PrintPowerBallDraws.Name = "PrintPowerBallDraws";
             this.PrintPowerBallDraws.Size = new System.Drawing.Size(134, 21);
             this.PrintPowerBallDraws.TabIndex = 0;
@@ -442,7 +451,7 @@
             // 
             this.PrintLottoDraws.AutoSize = true;
             this.PrintLottoDraws.Location = new System.Drawing.Point(12, 33);
-            this.PrintLottoDraws.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PrintLottoDraws.Margin = new System.Windows.Forms.Padding(4);
             this.PrintLottoDraws.Name = "PrintLottoDraws";
             this.PrintLottoDraws.Size = new System.Drawing.Size(104, 21);
             this.PrintLottoDraws.TabIndex = 0;
@@ -466,7 +475,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.displayMSG);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Lotto number Generator";
             this.Load += new System.EventHandler(this.Form1_Load);
